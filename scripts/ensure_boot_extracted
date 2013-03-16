@@ -97,7 +97,7 @@ then
 
     else
 
-      if [ -e boot/initrd.gz ] && [ -e boot/zImage ]
+      if [ -e boot/initrd.lzma ] && [ -e boot/zImage ]
       then
         cd ..
         scripts/ensure_nand_extracted $1

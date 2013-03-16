@@ -47,10 +47,10 @@ fi
 
 
 echo 
-echo "Building initrd.gz ..."
+echo "Building initrd.bz2 ..."
 
 cd BOOT-EXTRACTED/boot.img-ramdisk
-find . | cpio -o -H newc | gzip > ../initrd.gz
+find . | cpio -o -H newc | bzip2 > ../initrd.bz2
 cd ..
 rm -rf boot.img-ramdisk
 

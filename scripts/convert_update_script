@@ -512,7 +512,7 @@ do
   if [ "$new" == "boot" ]
   then
 
-    if [ -e ../../../../boot/initrd.gz ] && [ -e ../../../../boot/zImage ]
+    if [ -e ../../../../boot/initrd.bz2 ] && [ -e ../../../../boot/zImage ]
     then
         sed -i -e 's/\(format(.*"\/boot");\)/\1\nmount("MTD", "boot", "\/boot");/g' updater-script
 

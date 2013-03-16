@@ -106,7 +106,7 @@ else
     if [ -e boot.img ] 
     then
       boot_found=yes
-    elif [ -e boot/zImage ] && [ -e boot/initrd.gz ]
+    elif [ -e boot/zImage ] && [ -e boot/initrd.bz2 ]
     then
       boot_found=yes
     else

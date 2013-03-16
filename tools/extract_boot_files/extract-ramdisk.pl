@@ -20,7 +20,7 @@ $/ = $slurpvar;
 my($bootMagic, $kernelSize, $kernelLoadAddr, $ram1Size, $ram1LoadAddr, $ram2Size, $ram2LoadAddr, $tagsAddr, $pageSize, $unused1, $unused2, $bootName, $cmdLine, $id) =
 	unpack('a8 L L L L L L L L L L a16 a512 a8', $bootimg);
 	
-$pageSize = 2048;
+$pageSize = 4096;
 
 my($kernelAddr) = $pageSize;
 my($kernelSizeInPages) = int(($kernelSize + $pageSize - 1) / $pageSize);
@@ -29,12 +29,12 @@ my($ram1Addr) = (1 + $kernelSizeInPages) * $pageSize;
 
 my($ram1) = substr($bootimg, $ram1Addr, $ram1Size);
 
-if (substr($ram1, 0, 2) ne "\x1F\x8B")
-{
-	die "The boot image does not appear to be a valid gzip file";
-}
+#if (substr($ram1, 0, 2) ne "\x1F\x8B")
+#{
+#	die "The boot image does not appear to be a valid lzma file";
+#}
 
-open (RAM1FILE, ">$ARGV[0]-ramdisk.cpio.gz");
+open (RAM1FILE, ">$ARGV[0]-ramdisk.cpio.lzma");
 binmode(RAM1FILE);
 print RAM1FILE $ram1 or die;
 close RAM1FILE;
@@ -46,5 +46,5 @@ if (-e "$ARGV[0]-ramdisk") {
 
 mkdir "$ARGV[0]-ramdisk" or die;
 chdir "$ARGV[0]-ramdisk" or die;
-system ("gzip -d -c ../$ARGV[0]-ramdisk.cpio.gz | cpio -i");
-system ("rm -f ../$ARGV[0]-ramdisk.cpio.gz");
+system ("lzma -d -c ../$ARGV[0]-ramdisk.cpio.lzma | cpio -i");
+system ("rm -f ../$ARGV[0]-ramdisk.cpio.lzma");

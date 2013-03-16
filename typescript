@@ -1,0 +1,1074 @@
+Script started on Mon 25 Jun 2012 08:02:33 AM WIT
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78cebarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb$ sudo rebootwvdialreboot[Kcd scripts
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78ceb/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb/scripts$ ls
+[0m[01;32ma2sd_exists[0m                      [01;32mextract_initramfs[0m
+[01;32mabout[0m                            [01;32mextract_kernel_and_modules[0m
+[01;32madd_apps2sd[0m                      [01;32mfix_busybox[0m
+[01;32madd_apps2sd_files[0m                [01;32mfix_huawei_wifi[0m
+[01;32madd_apps2sd_to_update_script[0m     [01;32mfix_pre_build[0m
+[01;32madd_bash[0m                         [01;32mfix_update_script[0m
+[01;32madd_bash_to_update_script[0m        [01;32mfix_update_script_blanks[0m
+[01;32madd_busybox[0m                      [01;32mfix_update_script_with_features[0m
+[01;32madd_busybox_run_parts[0m            [01;32mget_api_level[0m
+[01;32madd_busybox_to_update_script[0m     [01;32mget_boot_img_page_size[0m
+[01;32madd_cachesd_to_update_script[0m     [01;32mget_boot_img_size[0m
+[01;32madd_custom_boot_anim[0m             [01;32mget_build_prop_val[0m
+[01;32madd_data_app[0m                     [01;32mget_cmdline[0m
+[01;32madd_data_app_to_update_script[0m    [01;32mget_device_name[0m
+[01;32madd_data_local_to_update_script[0m  [01;32mget_edify_def_val[0m
+[01;32madd_initd_perm_to_update_script[0m  [01;32mget_kernel_base_addr[0m
+[01;32madd_nano[0m                         [01;32mget_latest_notes[0m
+[01;32madd_nano_to_update_script[0m        [01;32mget_product_board[0m
+[01;32madd_su_to_update_script[0m          [01;32mget_product_model[0m
+[01;32madd_sysrorw_to_update_script[0m     [01;32mget_ramdisk_addr[0m
+[01;32madd_tether[0m                       [01;32mget_smali_version[0m
+[01;32madjust_mnt[0m                       [01;32mgrep_roms[0m
+[01;32mapp_file_to_working_folder[0m       [01;32mimg_files_to_working_folder[0m
+[01;32mboot_img_tools[0m                   [01;32minit_kitchen[0m
+[01;32mbuild_boot_img[0m                   [01;32mmake_backup_working[0m
+[01;32mbuild_boot_img_for_nand[0m          [01;32mmenu_advanced[0m
+[01;32mbuild_boot_img_from_folder_form[0m  [01;32mnano_exists[0m
+[01;32mbuild_nand_boot[0m                  [01;34mplugins[0m
+[01;32mbuild_rom[0m                        [01;32mporting_tools[0m
+[01;32mcall_extract_kernel_and_modules[0m  [01;32mport_rom[0m
+[01;32mchange_api_level[0m                 [01;32mpre_froyo_check[0m
+[01;32mchange_cmdline[0m                   [01;32mpress_enter[0m
+[01;32mchange_rom_name[0m                  [01;32mprompt_build_boot[0m
+[01;32mchange_wipe[0m                      [01;32mprompt_nand_type[0m
+[01;32mcheck_binaries[0m                   [01;32mprompt_remove_boot_extracted[0m
+[01;32mcheck_bootimg_header[0m             [01;32mprompt_show_rom_info[0m
+[01;32mcheck_galaxy_s[0m                   [01;32mremove_recovery[0m
+[01;32mcheck_galaxy_s2[0m                  [01;32mrfs_files_to_working_folder[0m
+[01;32mcheck_galaxy_s2x[0m                 [01;32mrun_plugins[0m
+[01;32mcheck_galaxy_s_and_s2[0m            [01;32mset_build_prop_val[0m
+[01;32mcheck_if_img_yaffs[0m               [01;32mset_kernel_offset_files[0m
+[01;32mcheck_install_dir[0m                [01;32mset_update_name[0m
+[01;32mcheck_kernel_offset[0m              [01;32mset_working_folder_name[0m
+[01;32mcheck_multiple_working[0m           [01;32msext4_tar_files_to_working_folder[0m
+[01;32mcheck_no_bootimg[0m                 [01;32msgs_tar_files_to_working_folder[0m
+[01;32mcheck_no_update_script[0m           [01;32msgs_tarmd5_files_to_working_folder[0m
+[01;32mcheck_rom[0m                        [01;32mshow_boot_img_info[0m
+[01;32mcheck_which_update_binary[0m        [01;32mshow_cache_warning[0m
+[01;32mcheck_yaffs_sizes[0m                [01;32mshow_explore2fs[0m
+[01;32mchoose_rom[0m                       [01;32mshow_ext2explore[0m
+[01;32mchoose_single_deodex[0m             [01;32mshow_linux_reader[0m
+[01;32mcompile_simg2img[0m                 [01;32mshow_magiciso[0m
+[01;32mcompile_unyaffs[0m                  [01;32mshow_rom_info[0m
+[01;32mconvert_to_unix[0m                  [01;32mshow_rooted_kernel_msg[0m
+[01;32mconvert_updater_script[0m           [01;32msign_files[0m
+[01;32mconvert_update_script[0m            [01;32msign_files_in_folder[0m
+[01;32mdata_app_exists[0m                  [01;32msimg_ext4_files_to_working_folder[0m
+[01;32mdisable_sounds[0m                   [01;32msimg_files_to_working_folder[0m
+[01;32mdo_deodex[0m                        [01;32mtar_file_to_working_folder[0m
+[01;32mdo_deodex_file[0m                   [01;32mtask_killer[0m
+[01;32mdo_deodex_folder[0m                 [01;32munpack_data_img[0m
+[01;32mdo_root[0m                          [01;32munzip_csc[0m
+[01;32mdo_root_boot_img[0m                 [01;32mupdate_script_convert_menu[0m
+[01;32mdo_zipalign[0m                      [01;32mupdate_script_should_convert_back[0m
+[01;32mensure_boot_extracted[0m            [01;32mverify_update_script[0m
+[01;32mensure_nand_extracted[0m            [01;32mwkg_to_working_folder[0m
+[01;32mextract_boot_img[0m                 [01;32mzip_file_to_working_folder[0m
+[01;32mextract_ext3_img[0m
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78ceb/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb/scripts$ ls
+[0m[01;32ma2sd_exists[0m                      [01;32mextract_initramfs[0m
+[01;32mabout[0m                            [01;32mextract_kernel_and_modules[0m
+[01;32madd_apps2sd[0m                      [01;32mfix_busybox[0m
+[01;32madd_apps2sd_files[0m                [01;32mfix_huawei_wifi[0m
+[01;32madd_apps2sd_to_update_script[0m     [01;32mfix_pre_build[0m
+[01;32madd_bash[0m                         [01;32mfix_update_script[0m
+[01;32madd_bash_to_update_script[0m        [01;32mfix_update_script_blanks[0m
+[01;32madd_busybox[0m                      [01;32mfix_update_script_with_features[0m
+[01;32madd_busybox_run_parts[0m            [01;32mget_api_level[0m
+[01;32madd_busybox_to_update_script[0m     [01;32mget_boot_img_page_size[0m
+[01;32madd_cachesd_to_update_script[0m     [01;32mget_boot_img_size[0m
+[01;32madd_custom_boot_anim[0m             [01;32mget_build_prop_val[0m
+[01;32madd_data_app[0m                     [01;32mget_cmdline[0m
+[01;32madd_data_app_to_update_script[0m    [01;32mget_device_name[0m
+[01;32madd_data_local_to_update_script[0m  [01;32mget_edify_def_val[0m
+[01;32madd_initd_perm_to_update_script[0m  [01;32mget_kernel_base_addr[0m
+[01;32madd_nano[0m                         [01;32mget_latest_notes[0m
+[01;32madd_nano_to_update_script[0m        [01;32mget_product_board[0m
+[01;32madd_su_to_update_script[0m          [01;32mget_product_model[0m
+[01;32madd_sysrorw_to_update_script[0m     [01;32mget_ramdisk_addr[0m
+[01;32madd_tether[0m                       [01;32mget_smali_version[0m
+[01;32madjust_mnt[0m                       [01;32mgrep_roms[0m
+[01;32mapp_file_to_working_folder[0m       [01;32mimg_files_to_working_folder[0m
+[01;32mboot_img_tools[0m                   [01;32minit_kitchen[0m
+[01;32mbuild_boot_img[0m                   [01;32mmake_backup_working[0m
+[01;32mbuild_boot_img_for_nand[0m          [01;32mmenu_advanced[0m
+[01;32mbuild_boot_img_from_folder_form[0m  [01;32mnano_exists[0m
+[01;32mbuild_nand_boot[0m                  [01;34mplugins[0m
+[01;32mbuild_rom[0m                        [01;32mporting_tools[0m
+[01;32mcall_extract_kernel_and_modules[0m  [01;32mport_rom[0m
+[01;32mchange_api_level[0m                 [01;32mpre_froyo_check[0m
+[01;32mchange_cmdline[0m                   [01;32mpress_enter[0m
+[01;32mchange_rom_name[0m                  [01;32mprompt_build_boot[0m
+[01;32mchange_wipe[0m                      [01;32mprompt_nand_type[0m
+[01;32mcheck_binaries[0m                   [01;32mprompt_remove_boot_extracted[0m
+[01;32mcheck_bootimg_header[0m             [01;32mprompt_show_rom_info[0m
+[01;32mcheck_galaxy_s[0m                   [01;32mremove_recovery[0m
+[01;32mcheck_galaxy_s2[0m                  [01;32mrfs_files_to_working_folder[0m
+[01;32mcheck_galaxy_s2x[0m                 [01;32mrun_plugins[0m
+[01;32mcheck_galaxy_s_and_s2[0m            [01;32mset_build_prop_val[0m
+[01;32mcheck_if_img_yaffs[0m               [01;32mset_kernel_offset_files[0m
+[01;32mcheck_install_dir[0m                [01;32mset_update_name[0m
+[01;32mcheck_kernel_offset[0m              [01;32mset_working_folder_name[0m
+[01;32mcheck_multiple_working[0m           [01;32msext4_tar_files_to_working_folder[0m
+[01;32mcheck_no_bootimg[0m                 [01;32msgs_tar_files_to_working_folder[0m
+[01;32mcheck_no_update_script[0m           [01;32msgs_tarmd5_files_to_working_folder[0m
+[01;32mcheck_rom[0m                        [01;32mshow_boot_img_info[0m
+[01;32mcheck_which_update_binary[0m        [01;32mshow_cache_warning[0m
+[01;32mcheck_yaffs_sizes[0m                [01;32mshow_explore2fs[0m
+[01;32mchoose_rom[0m                       [01;32mshow_ext2explore[0m
+[01;32mchoose_single_deodex[0m             [01;32mshow_linux_reader[0m
+[01;32mcompile_simg2img[0m                 [01;32mshow_magiciso[0m
+[01;32mcompile_unyaffs[0m                  [01;32mshow_rom_info[0m
+[01;32mconvert_to_unix[0m                  [01;32mshow_rooted_kernel_msg[0m
+[01;32mconvert_updater_script[0m           [01;32msign_files[0m
+[01;32mconvert_update_script[0m            [01;32msign_files_in_folder[0m
+[01;32mdata_app_exists[0m                  [01;32msimg_ext4_files_to_working_folder[0m
+[01;32mdisable_sounds[0m                   [01;32msimg_files_to_working_folder[0m
+[01;32mdo_deodex[0m                        [01;32mtar_file_to_working_folder[0m
+[01;32mdo_deodex_file[0m                   [01;32mtask_killer[0m
+[01;32mdo_deodex_folder[0m                 [01;32munpack_data_img[0m
+[01;32mdo_root[0m                          [01;32munzip_csc[0m
+[01;32mdo_root_boot_img[0m                 [01;32mupdate_script_convert_menu[0m
+[01;32mdo_zipalign[0m                      [01;32mupdate_script_should_convert_back[0m
+[01;32mensure_boot_extracted[0m            [01;32mverify_update_script[0m
+[01;32mensure_nand_extracted[0m            [01;32mwkg_to_working_folder[0m
+[01;32mextract_boot_img[0m                 [01;32mzip_file_to_working_folder[0m
+[01;32mextract_ext3_img[0m
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78ceb/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb/scripts$ cd .. [A
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78cebarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb$ ls
+[0m[01;32mmenu[0m  [01;34moriginal_update[0m  README  [01;34mscripts[0m  [01;34mtools[0m  typescript
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78cebarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb$ menu
+No command 'menu' found, did you mean:
+ Command 'dmenu' from package 'suckless-tools' (universe)
+ Command '9menu' from package '9menu' (universe)
+menu: command not found
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78cebarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb$ ,.[K[K./meniu[K[Ku
+[H[2J
+
+
+
+Welcome to dsixda's Android Kitchen
+
+Please wait ...........[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 0] 
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 20
+[H[2J[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? a^[[D^[[C^[[D^[[C                 a
+[H[2J
+Creating folder /home/arcturus/dsixda-Android-Kitchen-3d78ceb/bootimg_062512_080418 ...
+
+---> Place boot.img into the folder mentioned above <--
+
+Press Enter to continue
+^X^C
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Android-Kitchen-3d78cebarcturus@regulus-arcturus-lepito:~/dsixda-Android-Kitchen-3d78ceb$ cd[K[Kcd ..
+]0;arcturus@regulus-arcturus-lepito: ~arcturus@regulus-arcturus-lepito:~$ ls
+[0m[01;35m2011-12-17-120225_1024x600_scrot.png[0m
+[01;35m2012-02-13-191737_1024x600_scrot.png[0m
+[01;34marm[0m
+conkyrcconf
+[01;34mDesktop[0m
+[01;34mDocuments[0m
+[01;34mDownloads[0m
+[01;34mdsixda-Android-Kitchen-3d78ceb[0m
+examples.desktop
+[01;34mkernelandroid[0m
+[01;34mkernelgalminacefit[0m
+[01;34mkernelgayung[0m
+[01;34mMusic[0m
+[01;34mPictures[0m
+[01;32mPowerPointOpenOfficeRemote_PC_v3.0.0.jar[0m
+[01;34mPublic[0m
+QxXBDQjLygU.webm
+Readme
+receptionSub.do
+[01;34mTemplates[0m
+[01;35mTitanic 100 - New CGI of How Titanic Sank.mp4[0m
+[01;34mUbuntu One[0m
+[01;34mVideos[0m
+[01;35mwallpaper-377158.jpg[0m
+[01;34mworkspace[0m
+]0;arcturus@regulus-arcturus-lepito: ~arcturus@regulus-arcturus-lepito:~$ lscd .../menu
+bash: ./menu: No such file or directory
+]0;arcturus@regulus-arcturus-lepito: ~arcturus@regulus-arcturus-lepito:~$ cd dsixda-Kitchen/
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchenarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen$ ./menu
+[H[2J
+
+
+
+Welcome to dsixda's Android Kitchen
+
+Please wait ...........[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 02  20
+[H[2J[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? a
+[H[2J
+Creating folder /home/arcturus/dsixda-Kitchen/bootimg_062512_080524 ...
+
+---> Place boot.img into the folder mentioned above <--
+
+Press Enter to continue
+
+
+Kernel found at offset 4096 in boot.img
+Setting offset=4096 in mkbootimg.c, line 76
+Setting offset=4096 in mkbootimg.c, line 109
+Setting offset=4096 in extract-kernel.pl, line 23
+Setting offset=4096 in extract-ramdisk.pl, line 23
+
+Extracting kernel ...
+Extracting ramdisk ...
+
+Contents of bootimg_062512_080524:
+
+total 3224
+drwxrwxr-x 9 arcturus arcturus    4096 2012-06-25 08:05 boot.img-ramdisk
+-rw-rw-r-- 1 arcturus arcturus 3293372 2012-06-25 08:05 zImage
+
+Press Enter to continue
+
+[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? x
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 20
+[H[2J[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? x
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: x
+[H[2J
+Goodbye.
+
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchenarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen$ ./menu
+[H[2J
+
+
+
+Welcome to dsixda's Android Kitchen
+
+Please wait ...........[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 20
+[H[2J[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? x
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 99  0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 10
+[H[2J
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 1
+[H[2J
+CREATE WORKING FOLDER FOR ROM
+==============================
+
+Ensure there is at least one ROM under the 'original_update' folder!
+
+Select an option:
+
+ s - Show supported formats
+ x - Abort, don't create working folder
+
+Or press Enter to continue
+
+? s
+
+----------------------------------------------------------------------
+
+The format for each ROM must be one of the following:
+ 
+ - system.img + optional boot.img/lib.img (e.g. stock ROM or Nandroid)
+ - ZIP file for a custom ROM              (e.g. update.zip)
+ - ZIP file containing *.img              (e.g. stock rom.zip)
+ - ZIP file containing shipped ROM in SYSTEM + BOOT folder format
+ - Working folder made with this kitchen  (e.g. WORKING_old_rom)
+ 
+ Other formats:
+ 
+ Samsung Galaxy S:
+ - factoryfs.rfs + optional cache.rfs/zImage
+ - PDA.tar.md5 + optional CSC.tar.md5/PHONE.tar.md5
+ - PDA.tar + optional CSC.tar/PHONE.tar
+ - TAR/ZIP file containing factoryfs.rfs + more 
+ - TAR/ZIP file containing PDA.tar.md5/PDA.tar + more
+
+ Samsung Galaxy S Plus:
+ - system.img.ext4 + optional cache.img.ext4/boot.img
+ - TAR/ZIP file containing system.img.ext4 + more 
+[7m--More--(68%)[27m [K
+[7m--More--(69%)[27m[K
+Press Enter to continue, or type 'x' to abort: 
+Error: No ROMs found under original_update folder!
+
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 
+Invalid option
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 1
+[H[2J
+CREATE WORKING FOLDER FOR ROM
+==============================
+
+Ensure there is at least one ROM under the 'original_update' folder!
+
+Select an option:
+
+ s - Show supported formats
+ x - Abort, don't create working folder
+
+Or press Enter to continue
+
+? 
+Error: No ROMs found under original_update folder!
+
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 20
+[H[2J[H[2J
+Boot image tools
+----------------
+
+Enter a choice:
+
+  a = Extract kernel+ramdisk (regular format) from boot.img in any folder
+  x = Exit
+
+  NOTE: Some options will not be shown in this menu *until* a specific
+  action above is selected or a specific working folder is created.
+  e.g. You won't see the option to re-pack a boot.img unless you unpack
+  the boot.img first!
+
+? x
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 1
+[H[2J
+CREATE WORKING FOLDER FOR ROM
+==============================
+
+Ensure there is at least one ROM under the 'original_update' folder!
+
+Select an option:
+
+ s - Show supported formats
+ x - Abort, don't create working folder
+
+Or press Enter to continue
+
+? 
+Error: No ROMs found under original_update folder!
+
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 10
+[H[2J
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: u
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+About the Kitchen
+
+------------------------------------------------------------
+
+  For help and discussion : http://bit.ly/aLKQaR
+  Follow dsixda on Twitter: http://www.twitter.com/dsixda
+  For Paypal donations    : http://bit.ly/blHTKy
+
+------------------------------------------------------------
+
+Check online for updates (y/n)? (default: y): n
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 1
+[H[2J
+CREATE WORKING FOLDER FOR ROM
+==============================
+
+Ensure there is at least one ROM under the 'original_update' folder!
+
+Select an option:
+
+ s - Show supported formats
+ x - Abort, don't create working folder
+
+Or press Enter to continue
+
+? 
+Error: No ROMs found under original_update folder!
+
+Press Enter to continue
+
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+  1 - Set up working folder from ROM
+  2 - Add root permissions
+  3 - Add BusyBox
+  4 - Disable boot screen sounds
+  5 - Add wireless tethering
+  6 - Zipalign all *.apk files to optimize RAM usage
+  7 - Change wipe status of ROM
+  8 - Change name of ROM
+  9 - Check update-script for errors
+ 10 - Show working folder information
+
+  0 - ADVANCED OPTIONS
+ 99 - Build ROM from working folder
+
+  u - Update/About kitchen
+  x - Exit
+
+
+Enter option: 0
+[H[2J
+============================================================
+ Android Kitchen 0.196 - by dsixda (xda-developers.com)
+============================================================
+
+ 11 - Deodex files in your ROM
+ 12 - Add task killer tweak for speed (stock ROM only)
+ 13 - Add /data/app functionality
+ 14 - Add Nano text editor + sysro/sysrw
+ 15 - Add Bash (command shell)
+ 16 - Add Apps2SD
+ 17 - Add /etc/init.d scripts support (busybox run-parts)
+ 18 - Add custom boot animation functionality
+ 19 - Porting tools (experimental)
+ 20 - Tools for boot image (unpack/re-pack/etc.)
+ 21 - Unpack data.img
+ 22 - Sign APK or ZIP file(s)
+ 23 - Convert update-script or updater-script
+ 24 - Miscellaneous options / Plugin scripts
+
+ 99 - Build ROM from working folder
+  0 - BACK TO MAIN MENU
+
+Enter option: ^C
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchenarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen$ ls
+[0m[01;34mbootimg_062512_080524[0m  [01;34moriginal_update[0m  [01;34mscripts[0m  typescript
+[01;32mmenu[0m                   README           [01;34mtools[0m
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchenarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen$ nano menut[K
+[?1049h[1;24r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6                File: menu                                      [3;1H(B[0m[36m#!/bin/bash[5d############################################################################[6d#[7d# Copyright (c) 2012 - dsixda (dislam@rocketmail.com)[8d#[9d# Android Kitchen is 100% free.  This script file is intended for personal[10d# and/or educational use only.  It may not be duplicated for monetary[11d# benefit or any other purpose without the permission of the developer.[12d#[13d############################################################################[15d[39m(B[mversion[32m=[39m(B[m0.196[18d[32mif[39m(B[m [32m[[39m(B[m [32m![39m(B[m [32m-e[39m(B[m menu [32m][19dthen[20d(B[0;1m[34mecho[21;3Hecho[39m(B[m (B[0;1m[33m"Ensure you run this file from the SAME folder as where it was"[22;32H[39m(B[0;7m[ Read 123 lines ][23d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;21r8[10S[1;24r[2;1H[K[12d  (B[0;1m[34mecho[39m(B[m (B[0;1m[33m"installed, otherwise the kitchen will have problems running the"[13;3H[34mecho[39m(B[m (B[0;1m[33m"scripts.  Start the kitchen with the ./menu command, NOT with"[14;3H[34mecho[39m(B[m (B[0;1m[33m"any other command or method!"[15;3H(B[0m[32mexit[39m(B[m 0[16d[32mfi[18d[39m(B[mdir_list[32m=([39m(B[m original_update scripts tools [32m)[19d[39m(B[merror_found[32m=[39m(B[m0[21d[32mfor[39m(B[m check_dir [32min[39m(B[m (B[0;1m[31m${dir_list(B[0m[32m[[39m(B[m@[32m]}[12d[39m(B[m[13d[14d[15d[16d[17d[18d[22d[K[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[12d[32mdo[13dif[39m(B[m [32m[[39m(B[m [32m![39m(B[m [32m-e[39m(B[m (B[0;1m[31m$check_dir[39m(B[m [32m][14;3Hthen[15d(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"Error: Folder '$check_dir' not found"[16;5H[39m(B[merror_found[32m=[39m(B[m1[17;3H[32mfi[18ddone[20dif[39m(B[m [32m[[39m(B[m (B[0;1m[31m$error_found[39m(B[m [32m==[39m(B[m 1 [32m][21dthen[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[12d  (B[0;1m[34mecho[13;3Hecho[39m(B[m (B[0;1m[33m"Ensure you have installed the folders for the kitchen correctly."[14;3H(B[0m[32mexit[39m(B[m 0[15d[32mfi[18d(B[0;1m[34mchmod[39m(B[m 755 scripts/*[19dscripts/check_install_dir[21d[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$?"[39m(B[m [32m==[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;1H[32mthen[13dexit[39m(B[m 0[14d[32mfi[16d[39m(B[mscripts/init_kitchen[17dscripts/check_binaries[19d[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$?"[39m(B[m [32m==[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][20dthen[21dexit[39m(B[m 0[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;1H[32mfi[15dwhile[39m(B[m :[16d[32mdo[18d[39m(B[mclear[20;3H(B[0;1m[34mecho(B[0m[42m [21;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"============================================================"[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[12d  (B[0;1m[34mecho[39m(B[m (B[0;1m[33m" Android Kitchen $version - by dsixda (xda-developers.com)"[13;3H[34mecho[39m(B[m (B[0;1m[33m"============================================================"[14;3H[34mecho[15;3Hecho[39m(B[m (B[0;1m[33m"  1 - Set up working folder from ROM"[16;3H[34mecho[39m(B[m (B[0;1m[33m"  2 - Add root permissions"[17;3H[34mecho[39m(B[m (B[0;1m[33m"  3 - Add BusyBox"[18;3H[34mecho[39m(B[m (B[0;1m[33m"  4 - Disable boot screen sounds"[19;3H[34mecho[39m(B[m (B[0;1m[33m"  5 - Add wireless tethering"[20;3H[34mecho[39m(B[m (B[0;1m[33m"  6 - Zipalign all *.apk files to optimize RAM usage"[21;3H[34mecho[39m(B[m (B[0;1m[33m"  7 - Change wipe status of ROM"[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"  8 - Change name of ROM"[13;3H[34mecho[39m(B[m (B[0;1m[33m"  9 - Check update-script for errors"[14;3H[34mecho[39m(B[m (B[0;1m[33m" 10 - Show working folder information"[15;3H[34mecho(B[0m[42m [16;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"  0 - ADVANCED OPTIONS"[17;3H[34mecho[39m(B[m (B[0;1m[33m" 99 - Build ROM from working folder"[18;3H[34mecho[19;3Hecho[39m(B[m (B[0;1m[33m"  u - Update/About kitchen"[20;3H[34mecho[39m(B[m (B[0;1m[33m"  x - Exit"[21;3H[34mecho[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3H(B[0;1m[34mecho(B[0m[42m [13;3H(B[0;1m[34mecho[39m(B[m [32m-n[39m(B[m (B[0;1m[33m"Enter option: "[14;3H(B[0m[32mread[39m(B[m opt[16;3H[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"x"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"u"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][17;3Hthen[18d[39m(B[mscripts/check_multiple_working[19;3H[32mfi[20d[39m[42m  [21d[49m[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$?"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3H[32mthen[13dcase[39m(B[m (B[0;1m[31m$opt[39m(B[m [32min[14;7H[39m(B[m1[32m)[39m(B[m clear[32m;[39m(B[m scripts/check_rom[32m;[39m(B[m continue[32m;;[15;7H[39m(B[m2[32m)[39m(B[m scripts/do_root[32m;[39m(B[m continue[32m;;[16;7H[39m(B[m3[32m)[39m(B[m scripts/add_busybox show_help[32m;;[17;7H[39m(B[m4[32m)[39m(B[m scripts/disable_sounds[32m;;[18;7H[39m(B[m5[32m)[39m(B[m scripts/add_tether[32m;;[19;7H[39m(B[m6[32m)[39m(B[m scripts/do_zipalign[32m;;[20;7H[39m(B[m7[32m)[39m(B[m scripts/change_wipe[32m;;[21;7H[39m(B[m8[32m)[39m(B[m scripts/change_rom_name[32m;;[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[12;7H9[32m)[39m(B[m scripts/verify_update_script[32m;[39m(B[m continue[32m;;[13;7H[39m(B[m10[32m)[39m(B[m scripts/show_rom_info[32m;;[14;7H[39m(B[m0[32m)[39m(B[m scripts/menu_advanced (B[0;1m[31m$version(B[0m[32m;[39m(B[m continue[32m;;[15;7H[39m(B[m99[32m)[39m(B[m scripts/build_rom[32m;;[16;7H[39m(B[mu[32m)[39m(B[m scripts/about (B[0;1m[31m$version(B[0m[32m;[39m(B[m continue[32m;;[17;7H[39m(B[mx[32m)[39m(B[m scripts/init_kitchen[32m;[39m(B[m clear[32m;[39m(B[m (B[0;1m[34mecho(B[0m[32m;[39m(B[m (B[0;1m[34mecho[39m(B[m (B[0;1m[33m"Goodbye."(B[0m[32m;[39m(B[m (B[0;1m[34mecho(B[0m[32m;[39m(B[m [32mexit[39m(B[m 1[32m;;[18;7H[39m(B[m*[32m)[39m(B[m (B[0;1m[34mecho[39m(B[m (B[0;1m[33m"Invalid option"(B[0m[32m;[39m(B[m continue[32m;;[19;5Hesac[20;3Hfi[12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3Hscripts/press_enter[14d[32mdone[12d[39m(B[m[13d[14d[15d[16d[A[A[A[A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10T[1;24r[3;5H[32mcase[39m(B[m (B[0;1m[31m$opt[39m(B[m [32min[4;7H[39m(B[m1[32m)[39m(B[m clear[32m;[39m(B[m scripts/check_rom[32m;[39m(B[m continue[32m;;[5;7H[39m(B[m2[32m)[39m(B[m scripts/do_root[32m;[39m(B[m continue[32m;;[6;7H[39m(B[m3[32m)[39m(B[m scripts/add_busybox show_help[32m;;[7;7H[39m(B[m4[32m)[39m(B[m scripts/disable_sounds[32m;;[8;7H[39m(B[m5[32m)[39m(B[m scripts/add_tether[32m;;[9;7H[39m(B[m6[32m)[39m(B[m scripts/do_zipalign[32m;;[10;7H[39m(B[m7[32m)[39m(B[m scripts/change_wipe[32m;;[11;7H[39m(B[m8[32m)[39m(B[m scripts/change_rom_name[32m;;[12;7H[39m(B[m9[32m)[39m(B[m scripts/verify_update_script[32m;[39m(B[m continue[32m;;[39m(B[m[A[A[A[A[A[A[A[A[A[2;22r[2;1H[10T[1;24r[3;3H(B[0;1m[34mecho[39m(B[m [32m-n[39m(B[m (B[0;1m[33m"Enter option: "[4;3H(B[0m[32mread[39m(B[m opt[6;3H[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"x"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"u"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][7;3Hthen[8d[39m(B[mscripts/check_multiple_working[9;3H[32mfi[10d[39m[42m  [11d[49m[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$?"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][12;3Hthen[22d[39m(B[m[K[12d[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10T[1;24r[3;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"  9 - Check update-script for errors"[4;3H[34mecho[39m(B[m (B[0;1m[33m" 10 - Show working folder information"[5;3H[34mecho(B[0m[42m [6;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"  0 - ADVANCED OPTIONS"[7;3H[34mecho[39m(B[m (B[0;1m[33m" 99 - Build ROM from working folder"[8;3H[34mecho[9;3Hecho[39m(B[m (B[0;1m[33m"  u - Update/About kitchen"[10;3H[34mecho[39m(B[m (B[0;1m[33m"  x - Exit"[11;3H[34mecho[12;3Hecho(B[0m[42m [49m(B[m[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10T[1;24r[3;3H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"============================================================"[4;3H[34mecho[5;3Hecho[39m(B[m (B[0;1m[33m"  1 - Set up working folder from ROM"[6;3H[34mecho[39m(B[m (B[0;1m[33m"  2 - Add root permissions"[7;3H[34mecho[39m(B[m (B[0;1m[33m"  3 - Add BusyBox"[8;3H[34mecho[39m(B[m (B[0;1m[33m"  4 - Disable boot screen sounds"[9;3H[34mecho[39m(B[m (B[0;1m[33m"  5 - Add wireless tethering"[10;3H[34mecho[39m(B[m (B[0;1m[33m"  6 - Zipalign all *.apk files to optimize RAM usage"[11;3H[34mecho[39m(B[m (B[0;1m[33m"  7 - Change wipe status of ROM"[12;3H[34mecho[39m(B[m (B[0;1m[33m"  8 - Change name of ROM"[39m(B[m[A[A[A[A[A[A[A[A[A[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3H(B[0;1m[34mecho(B[0m[42m [13;3H(B[0;1m[34mecho[39m(B[m [32m-n[39m(B[m (B[0;1m[33m"Enter option: "[14;3H(B[0m[32mread[39m(B[m opt[16;3H[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"x"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"u"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$opt"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][17;3Hthen[18d[39m(B[mscripts/check_multiple_working[19;3H[32mfi[20d[39m[42m  [21d[49m[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$?"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"1"[39m(B[m [32m][12d[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3H[32mthen[13dcase[39m(B[m (B[0;1m[31m$opt[39m(B[m [32min[14;7H[39m(B[m1[32m)[39m(B[m clear[32m;[39m(B[m scripts/check_rom[32m;[39m(B[m continue[32m;;[15;7H[39m(B[m2[32m)[39m(B[m scripts/do_root[32m;[39m(B[m continue[32m;;[16;7H[39m(B[m3[32m)[39m(B[m scripts/add_busybox show_help[32m;;[17;7H[39m(B[m4[32m)[39m(B[m scripts/disable_sounds[32m;;[18;7H[39m(B[m5[32m)[39m(B[m scripts/add_tether[32m;;[19;7H[39m(B[m6[32m)[39m(B[m scripts/do_zipalign[32m;;[20;7H[39m(B[m7[32m)[39m(B[m scripts/change_wipe[32m;;[21;7H[39m(B[m8[32m)[39m(B[m scripts/change_rom_name[32m;;[12d[39m(B[m [13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[12;7H9[32m)[39m(B[m scripts/verify_update_script[32m;[39m(B[m continue[32m;;[13;7H[39m(B[m10[32m)[39m(B[m scripts/show_rom_info[32m;;[14;7H[39m(B[m0[32m)[39m(B[m scripts/menu_advanced (B[0;1m[31m$version(B[0m[32m;[39m(B[m continue[32m;;[15;7H[39m(B[m99[32m)[39m(B[m scripts/build_rom[32m;;[16;7H[39m(B[mu[32m)[39m(B[m scripts/about (B[0;1m[31m$version(B[0m[32m;[39m(B[m continue[32m;;[17;7H[39m(B[mx[32m)[39m(B[m scripts/init_kitchen[32m;[39m(B[m clear[32m;[39m(B[m (B[0;1m[34mecho(B[0m[32m;[39m(B[m (B[0;1m[34mecho[39m(B[m (B[0;1m[33m"Goodbye."(B[0m[32m;[39m(B[m (B[0;1m[34mecho(B[0m[32m;[39m(B[m [32mexit[39m(B[m 1[32m;;[18;7H[39m(B[m*[32m)[39m(B[m (B[0;1m[34mecho[39m(B[m (B[0;1m[33m"Invalid option"(B[0m[32m;[39m(B[m continue[32m;;[19;5Hesac[20;3Hfi[12;2H[39m(B[m[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3Hscripts/press_enter[14d[32mdone[12;2H[39m(B[m[13d[14;2H[15d[16d[22;10H(B[0;7m[ line 124/124 (100%), col 1/1 (100%), char 2933/2933 (100%) ][16d(B[m[23d[J[24;80H[24;1H[?1049l[?1l>]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchenarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen$ cd scripts/
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchen/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen/scripts$ ls
+[0m[01;32ma2sd_exists[0m                      [01;32mextract_initramfs[0m
+[01;32mabout[0m                            [01;32mextract_kernel_and_modules[0m
+[01;32madd_apps2sd[0m                      [01;32mfix_busybox[0m
+[01;32madd_apps2sd_files[0m                [01;32mfix_huawei_wifi[0m
+[01;32madd_apps2sd_to_update_script[0m     [01;32mfix_pre_build[0m
+[01;32madd_bash[0m                         [01;32mfix_update_script[0m
+[01;32madd_bash_to_update_script[0m        [01;32mfix_update_script_blanks[0m
+[01;32madd_busybox[0m                      [01;32mfix_update_script_with_features[0m
+[01;32madd_busybox_run_parts[0m            [01;32mget_api_level[0m
+[01;32madd_busybox_to_update_script[0m     [01;32mget_boot_img_page_size[0m
+[01;32madd_cachesd_to_update_script[0m     [01;32mget_boot_img_size[0m
+[01;32madd_custom_boot_anim[0m             [01;32mget_build_prop_val[0m
+[01;32madd_data_app[0m                     [01;32mget_cmdline[0m
+[01;32madd_data_app_to_update_script[0m    [01;32mget_device_name[0m
+[01;32madd_data_local_to_update_script[0m  [01;32mget_edify_def_val[0m
+[01;32madd_initd_perm_to_update_script[0m  [01;32mget_kernel_base_addr[0m
+[01;32madd_nano[0m                         [01;32mget_latest_notes[0m
+[01;32madd_nano_to_update_script[0m        [01;32mget_product_board[0m
+[01;32madd_su_to_update_script[0m          [01;32mget_product_model[0m
+[01;32madd_sysrorw_to_update_script[0m     [01;32mget_ramdisk_addr[0m
+[01;32madd_tether[0m                       [01;32mget_smali_version[0m
+[01;32madjust_mnt[0m                       [01;32mgrep_roms[0m
+[01;32mapp_file_to_working_folder[0m       [01;32mimg_files_to_working_folder[0m
+[01;32mboot_img_tools[0m                   [01;32minit_kitchen[0m
+[01;32mbuild_boot_img[0m                   [01;32mmake_backup_working[0m
+[01;32mbuild_boot_img_for_nand[0m          [01;32mmenu_advanced[0m
+[01;32mbuild_boot_img_from_folder_form[0m  [01;32mnano_exists[0m
+[01;32mbuild_nand_boot[0m                  [01;34mplugins[0m
+[01;32mbuild_rom[0m                        [01;32mporting_tools[0m
+[01;32mcall_extract_kernel_and_modules[0m  [01;32mport_rom[0m
+[01;32mchange_api_level[0m                 [01;32mpre_froyo_check[0m
+[01;32mchange_cmdline[0m                   [01;32mpress_enter[0m
+[01;32mchange_rom_name[0m                  [01;32mprompt_build_boot[0m
+[01;32mchange_wipe[0m                      [01;32mprompt_nand_type[0m
+[01;32mcheck_binaries[0m                   [01;32mprompt_remove_boot_extracted[0m
+[01;32mcheck_bootimg_header[0m             [01;32mprompt_show_rom_info[0m
+[01;32mcheck_galaxy_s[0m                   [01;32mremove_recovery[0m
+[01;32mcheck_galaxy_s2[0m                  [01;32mrfs_files_to_working_folder[0m
+[01;32mcheck_galaxy_s2x[0m                 [01;32mrun_plugins[0m
+[01;32mcheck_galaxy_s_and_s2[0m            [01;32mset_build_prop_val[0m
+[01;32mcheck_if_img_yaffs[0m               [01;32mset_kernel_offset_files[0m
+[01;32mcheck_install_dir[0m                [01;32mset_update_name[0m
+[01;32mcheck_kernel_offset[0m              [01;32mset_working_folder_name[0m
+[01;32mcheck_multiple_working[0m           [01;32msext4_tar_files_to_working_folder[0m
+[01;32mcheck_no_bootimg[0m                 [01;32msgs_tar_files_to_working_folder[0m
+[01;32mcheck_no_update_script[0m           [01;32msgs_tarmd5_files_to_working_folder[0m
+[01;32mcheck_rom[0m                        [01;32mshow_boot_img_info[0m
+[01;32mcheck_which_update_binary[0m        [01;32mshow_cache_warning[0m
+[01;32mcheck_yaffs_sizes[0m                [01;32mshow_explore2fs[0m
+[01;32mchoose_rom[0m                       [01;32mshow_ext2explore[0m
+[01;32mchoose_single_deodex[0m             [01;32mshow_linux_reader[0m
+[01;32mcompile_simg2img[0m                 [01;32mshow_magiciso[0m
+[01;32mcompile_unyaffs[0m                  [01;32mshow_rom_info[0m
+[01;32mconvert_to_unix[0m                  [01;32mshow_rooted_kernel_msg[0m
+[01;32mconvert_updater_script[0m           [01;32msign_files[0m
+[01;32mconvert_update_script[0m            [01;32msign_files_in_folder[0m
+[01;32mdata_app_exists[0m                  [01;32msimg_ext4_files_to_working_folder[0m
+[01;32mdisable_sounds[0m                   [01;32msimg_files_to_working_folder[0m
+[01;32mdo_deodex[0m                        [01;32mtar_file_to_working_folder[0m
+[01;32mdo_deodex_file[0m                   [01;32mtask_killer[0m
+[01;32mdo_deodex_folder[0m                 [01;32munpack_data_img[0m
+[01;32mdo_root[0m                          [01;32munzip_csc[0m
+[01;32mdo_root_boot_img[0m                 [01;32mupdate_script_convert_menu[0m
+[01;32mdo_zipalign[0m                      [01;32mupdate_script_should_convert_back[0m
+[01;32mensure_boot_extracted[0m            [01;32mverify_update_script[0m
+[01;32mensure_nand_extracted[0m            [01;32mwkg_to_working_folder[0m
+[01;32mextract_boot_img[0m                 [01;32mzip_file_to_working_folder[0m
+[01;32mextract_ext3_img[0m
+]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchen/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen/scripts$ nano menu_advanced 
+[?1049h[1;24r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6             File: menu_advanced                                [3;1H(B[m############################################################################[4d#[5d# Copyright (c) 2011 - dsixda (dislam@rocketmail.com)[6d#[7d# Android Kitchen is 100% free.  This script file is intended for personal[8d# and/or educational use only.  It may not be duplicated for monetary[9d# benefit or any other purpose without the permission of the developer.[10d#[11d############################################################################[13d#!/bin/bash[15dversion=$1[17dwhile :[18ddo[20dclear[22;32H(B[0;7m[ Read 76 lines ][23d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;21r8[10S[1;24r[12;3Hecho[13;3Hecho "============================================================"[14;3Hecho " Android Kitchen $version - by dsixda (xda-developers.com)"[15;3Hecho "============================================================"[16;3Hecho[17;3Hecho " 11 - Deodex files in your ROM"[18;3Hecho " 12 - Add task killer tweak for speed (stock ROM only)"[19;3Hecho " 13 - Add /data/app functionality"[20;3Hecho " 14 - Add Nano text editor + sysro/sysrw"[21;3Hecho " 15 - Add Bash (command shell)"[12d[13d[14d[15d[16d[17d[18d[22d[K[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3Hecho " 16 - Add Apps2SD"[13;3Hecho " 17 - Add /etc/init.d scripts support (busybox run-parts)"[14;3Hecho " 18 - Add custom boot animation functionality"[15;3Hecho " 19 - Porting tools (experimental)"[16;3Hecho " 20 - Tools for boot image (unpack/re-pack/etc.)"[17;3Hecho " 21 - Unpack data.img"[18;3Hecho " 22 - Sign APK or ZIP file(s)"[19;3Hecho " 23 - Convert update-script or updater-script"[20;3Hecho " 24 - Miscellaneous options / Plugin scripts"[21;3Hecho[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;3Hecho " 99 - Build ROM from working folder"[13;3Hecho "  0 - BACK TO MAIN MENU"[14;3Hecho[15;3Hecho -n "Enter option: "[16;3Hread opt[18;3Hif [ "$opt" != "0" ][19;3Hthen[20dscripts/check_multiple_working[21;3Hfi[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[2;1H[K[13d  if [ "$?" != "1" ][14;3Hthen[15dcase $opt in[16;7H11) scripts/do_deodex; continue;;[17;7H12) scripts/task_killer;;[18;7H13) scripts/add_data_app show_help;;[19;7H14) scripts/add_nano show_help;;[20;7H15) scripts/add_bash show_help;;[21;7H16) scripts/add_apps2sd show_help;;[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[2;22r8[22d[10S[1;24r[12;7H17) scripts/add_busybox_run_parts show_help;;[13;7H18) scripts/add_custom_boot_anim;;[14;7H19) scripts/porting_tools; continue;;[15;7H20) scripts/boot_img_tools; continue;;[16;7H21) scripts/unpack_data_img;;[17;7H22) scripts/sign_files; continue;;[18;7H23) scripts/update_script_convert_menu; continue;;[19;7H24) scripts/run_plugins; continue;;[20;7H99) scripts/build_rom;;[21;7H0) exit 1;;[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d7[3;22r8[22d[10S[1;24r[12;7H*) echo "Invalid option"; continue;;[13;5Hesac[14;3Hfi[16dscripts/press_enter[18ddone[12d[13d[14d[23d[J[24;80H[24;1H[?1049l[?1l>]0;arcturus@regulus-arcturus-lepito: ~/dsixda-Kitchen/scriptsarcturus@regulus-arcturus-lepito:~/dsixda-Kitchen/scripts$ nano boot_img_tools 
+[?1049h[1;24r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6            File: boot_img_tools                                [3;1H(B[m############################################################################[4d#[5d# Copyright (c) 2011 - dsixda (dislam@rocketmail.com)[6d#[7d# Android Kitchen is 100% free.  This script file is intended for personal[8d# and/or educational use only.  It may not be duplicated for monetary[9d# benefit or any other purpose without the permission of the developer.[10d#[11d############################################################################[14dclear[16dwhile :[17ddo[19dclear[21;3Hecho[22;32H(B[0;7m[ Read 146 lines ][23d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^
