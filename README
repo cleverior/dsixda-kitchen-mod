@@ -1,5 +1,14 @@
+Just Another mod from DSIXDA kitchen :)
+focused for boot.img modification, added support for both gzip and lzma compression method
 
-Welcome to dsixda's Android Kitchen.  This is a ROM customization kitchen mainly for HTC devices but will work for devices by certain other manufacturers as well.
+How to use?
+for lzma ramdisk compressed boot.img, just do 'touch kernel-lzma' in root directory :)
+for gzip? just delete the 'kernel-lzma' file :D
+
+@alfiyansys
+
+<-------------------------------------------->
+Welcome to dsixda's Android Kitchen. This is a ROM customization kitchen mainly for HTC devices but will work for devices by certain other manufacturers as well.
 
 Downloading the kitchen:
 
@@ -7,4 +16,3 @@ From GitHub, simply click on the "Tags" link on the top. An archive of previous 
 
 Release notes, setup instructions and FAQ are all found here:
 http://forum.xda-developers.com/showthread.php?p=5626292
-
